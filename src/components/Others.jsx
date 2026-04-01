@@ -670,7 +670,7 @@ export function Tools() {
 const FOOTER_PAGES = {
   hakkinda: {
     title: 'Hakkında',
-    content: `Gezish AI, yapay zeka teknolojisini kullanan ücretsiz bir seyahat planlama platformudur. Groq altyapısıyla desteklenen llama-3.3-70b modeli sayesinde, gideceğin destinasyon ve ilgi alanlarına göre saatlik detaylı gezi planları oluşturur.
+    content: `Gezish AI, yapay zeka teknolojisini kullanan ücretsiz bir seyahat planlama platformudur. Google Gemini (gemini-2.0-flash) modeli sayesinde, gideceğin destinasyon ve ilgi alanlarına göre saatlik detaylı gezi planları oluşturur.
 
 Amacımız seyahat planlamasını herkes için kolay, hızlı ve kişisel hale getirmektir. Ücretli rehber kitapları ya da saatler süren araştırma yerine, saniyeler içinde hazır ve uygulanabilir bir plan.
 
@@ -684,7 +684,7 @@ Topladığımız veriler: Hesap oluşturduğunda e-posta adresin ve ismin Fireba
 
 Paylaşmadığımız veriler: Kişisel bilgilerin hiçbir üçüncü tarafla pazarlama amaçlı paylaşılmaz.
 
-API kullanımı: Plan oluşturma sırasında girdiğin destinasyon ve tercihler Groq API'ya gönderilir; bu veriler Groq'un gizlilik politikasına tabidir.
+API kullanımı: Plan oluşturma sırasında girdiğin destinasyon ve tercihler Google Gemini API'ya gönderilir; bu veriler Google'ın gizlilik politikasına tabidir.
 
 Çerezler: Oturum yönetimi için Firebase'in standart authentication çerezleri kullanılır.`
   },
@@ -791,7 +791,7 @@ export function Footer() {
         </div>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-6 gap-3">
           <span className="text-xs text-white/30">© 2026 Gezish AI. Tüm hakları saklıdır.</span>
-          <span className="text-xs text-white/30">Groq AI · llama-3.3-70b ile güçlendirilmiştir</span>
+          <span className="text-xs text-white/30">Google Gemini · gemini-2.0-flash ile güçlendirilmiştir</span>
         </div>
       </footer>
     </>

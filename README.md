@@ -8,7 +8,7 @@
 
 ## Özellikler
 
-- **AI Plan Oluşturma** — Groq (llama-3.3-70b) ile saatlik aktiviteler, gerçek mekan isimleri, adresler ve yerel para birimiyle fiyat tahminleri.
+- **AI Plan Oluşturma** — Google Gemini (gemini-2.0-flash) ile saatlik aktiviteler, gerçek mekan isimleri, adresler ve yerel para birimiyle fiyat tahminleri.
 - **Çoklu Şehir** — Tek planda birden fazla şehir rotası oluştur.
 - **Plan Kaydet & Paylaş** — Planları hesabına kaydet veya tek linkle herkesle paylaş.
 - **Topluluk Feed** — Diğer gezginlerin paylaştığı planları keşfet.
@@ -27,7 +27,7 @@
 | Frontend          | React 19 + Vite                             |
 | Stil              | Tailwind CSS                                |
 | Auth & Veritabanı | Firebase (Authentication + Firestore)       |
-| AI                | Groq API — llama-3.3-70b-versatile          |
+| AI                | Google Gemini API — gemini-2.0-flash        |
 | Routing           | React Router v6                             |
 | Döviz             | open.er-api.com (ücretsiz, key gerektirmez) |
 | Deploy            | Vercel                                      |
@@ -49,7 +49,7 @@ VITE_FIREBASE_PROJECT_ID=...
 VITE_FIREBASE_STORAGE_BUCKET=...
 VITE_FIREBASE_MESSAGING_SENDER_ID=...
 VITE_FIREBASE_APP_ID=...
-VITE_GROQ_API_KEY=...
+VITE_GEMINI_API_KEY=...
 ```
 
 ```bash
