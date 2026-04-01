@@ -156,8 +156,6 @@ RULES:
       if (!res.ok) {
         let detail = ''
         try { const errBody = await res.json(); detail = errBody?.error?.message || '' } catch {}
-        if (res.status === 400) throw new Error('API anahtarı geçersiz (400). Google AI Studio\'dan yeni bir key al ve Vercel\'de güncelle.')
-        if (res.status === 429) throw new Error('API istek limiti doldu (429). Birkaç saniye bekleyip tekrar dene.')
         throw new Error(`API hatası: ${res.status}${detail ? ' — ' + detail : ''}`)
       }
       const data = await res.json()
