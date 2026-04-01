@@ -8,29 +8,29 @@
 
 ## Özellikler
 
-- **AI Plan Oluşturma** — Groq (llama-3.3-70b) ile saatlik aktiviteler, gerçek mekan isimleri, adresler ve yerel para birimiyle fiyat tahminleri
-- **Çoklu Şehir** — Tek planda birden fazla şehir rotası oluştur
-- **Plan Kaydet & Paylaş** — Planları hesabına kaydet veya tek linkle herkesle paylaş
-- **Topluluk Feed** — Diğer gezginlerin paylaştığı planları keşfet
+- **AI Plan Oluşturma** — Groq (llama-3.3-70b) ile saatlik aktiviteler, gerçek mekan isimleri, adresler ve yerel para birimiyle fiyat tahminleri.
+- **Çoklu Şehir** — Tek planda birden fazla şehir rotası oluştur.
+- **Plan Kaydet & Paylaş** — Planları hesabına kaydet veya tek linkle herkesle paylaş.
+- **Topluluk Feed** — Diğer gezginlerin paylaştığı planları keşfet.
 - **Döviz Hesaplayıcı** — 45+ para birimi desteği, canlı kur (open.er-api.com)
-- **Vize Bilgileri** — Türk pasaportu için 20+ ülke vize durumu + bilinmeyen ülkeler için AI sorgusu
-- **Hava Durumu & İklim** — Destinasyona ve süreye göre iklim ipuçları
-- **Valiz Kontrol Listesi** — İnteraktif checklist ve ilerleme takibi
-- **Dark Mode** — Tam karanlık tema desteği
+- **Vize Bilgileri** — Türk pasaportu için 20+ ülke vize durumu + bilinmeyen ülkeler için AI sorgusu.
+- **Hava Durumu & İklim** — Destinasyona ve süreye göre iklim ipuçları.
+- **Valiz Kontrol Listesi** — İnteraktif checklist ve ilerleme takibi.
+- **Dark Mode** — Tam karanlık tema desteği.
 - **PDF İndir** — Planı PDF olarak kaydet (giriş gerektirir)
-- **Google Maps** — Her aktivite için harita linki
+- **Google Maps** — Her aktivite için harita linki.
 
 ## Teknoloji
 
-| Katman | Teknoloji |
-|---|---|
-| Frontend | React 19 + Vite |
-| Stil | Tailwind CSS |
-| Auth & Veritabanı | Firebase (Authentication + Firestore) |
-| AI | Groq API — llama-3.3-70b-versatile |
-| Routing | React Router v6 |
-| Döviz | open.er-api.com (ücretsiz, key gerektirmez) |
-| Deploy | Vercel |
+| Katman            | Teknoloji                                   |
+| ----------------- | ------------------------------------------- |
+| Frontend          | React 19 + Vite                             |
+| Stil              | Tailwind CSS                                |
+| Auth & Veritabanı | Firebase (Authentication + Firestore)       |
+| AI                | Groq API — llama-3.3-70b-versatile          |
+| Routing           | React Router v6                             |
+| Döviz             | open.er-api.com (ücretsiz, key gerektirmez) |
+| Deploy            | Vercel                                      |
 
 ## Kurulum
 
