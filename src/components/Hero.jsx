@@ -136,10 +136,9 @@ RULES:
 6. duration: e.g. "1-2 hours"
 7. price: realistic cost in the LOCAL currency of the exact destination — be precise about regional differences (e.g. Northern Cyprus/KKTC uses ₺ Turkish Lira, Southern Cyprus uses €; Kosovo uses €; Montenegro uses €; Bosnia uses KM; Serbia uses RSD دینار; Georgia uses ₾ GEL; Azerbaijan uses ₼ AZN; UAE uses AED د.إ; Thailand uses ฿; Japan uses ¥; USA uses $; UK uses £) — always use the correct currency symbol and realistic local prices, never default to EUR unless the destination actually uses Euro
 8. tips (per activity): 1 insider tip mentioning a specific dish, exhibit, viewpoint, or trick — max 20 words
-9. tips array: 4 local practical tips with specific place names or street names where relevant
-10. warnings: 3 important warnings
+9. tips array: 2 local practical tips with specific place names or street names where relevant
+10. warnings: 2 important warnings
 11. weather.summary: 1-2 sentences describing typical weather for this destination during a ${days}-day trip
-12. weather.tips: EXACTLY 4 practical weather/climate tips relevant to the destination and trip duration
 13. Generate EXACTLY ${days} days — do NOT add day ${parseInt(days)+1}
 14. ${multiCity ? 'Distribute days logically across cities' : 'Different neighborhood each day'}
 15. JSON keys must stay exactly as specified — only translate the string values
