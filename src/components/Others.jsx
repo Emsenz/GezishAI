@@ -536,7 +536,7 @@ export function Tools() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}` },
         body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile',
+          model: 'llama-3.1-8b-instant',
           messages: [{ role: 'user', content: `Türk pasaportu ile ${visaSearch} ülkesine giriş için vize durumu nedir? Kısa ve net Türkçe cevap ver. Şu bilgileri ver: vize gerekli mi, e-vize mümkün mü, vizesiz giriş mümkünse kaç gün kalınabilir, tahmini vize ücreti (varsa). 3-4 cümle yeterli.` }],
           temperature: 0.3,
           max_tokens: 300,
