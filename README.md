@@ -8,7 +8,7 @@
 
 ## Özellikler
 
-- **AI Plan Oluşturma** — Google Gemini (gemini-2.0-flash) ile saatlik aktiviteler, gerçek mekan isimleri, adresler ve yerel para birimiyle fiyat tahminleri.
+- **AI Plan Oluşturma** — Google Gemini (gemini-2.5-flash-preview-04-17) ile saatlik aktiviteler, gerçek mekan isimleri, adresler ve yerel para birimiyle fiyat tahminleri.
 - **Çoklu Şehir** — Tek planda birden fazla şehir rotası oluştur.
 - **Plan Kaydet & Paylaş** — Planları hesabına kaydet veya tek linkle herkesle paylaş.
 - **Topluluk Feed** — Diğer gezginlerin paylaştığı planları keşfet.
@@ -27,7 +27,7 @@
 | Frontend          | React 19 + Vite                             |
 | Stil              | Tailwind CSS                                |
 | Auth & Veritabanı | Firebase (Authentication + Firestore)       |
-| AI                | Google Gemini API — gemini-2.0-flash        |
+| AI                | Google Gemini API — gemini-2.5-flash-preview-04-17        |
 | Routing           | React Router v6                             |
 | Döviz             | open.er-api.com (ücretsiz, key gerektirmez) |
 | Deploy            | Vercel                                      |

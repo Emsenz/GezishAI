@@ -147,7 +147,7 @@ RULES:
     const callGroq = async () => {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY
       if (!apiKey || apiKey === 'undefined') throw new Error('API anahtarı bulunamadı. Vercel → Settings → Environment Variables bölümünde VITE_GEMINI_API_KEY eklendiğinden emin ol.')
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.7, maxOutputTokens: 8192 } })
