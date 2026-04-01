@@ -533,7 +533,7 @@ export function Tools() {
     setVisaAiResult(null)
     try {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${apiKey}`, {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -670,7 +670,7 @@ export function Tools() {
 const FOOTER_PAGES = {
   hakkinda: {
     title: 'Hakkında',
-    content: `Gezish AI, yapay zeka teknolojisini kullanan ücretsiz bir seyahat planlama platformudur. Google Gemini (gemini-2.5-flash-preview-04-17) modeli sayesinde, gideceğin destinasyon ve ilgi alanlarına göre saatlik detaylı gezi planları oluşturur.
+    content: `Gezish AI, yapay zeka teknolojisini kullanan ücretsiz bir seyahat planlama platformudur. Google Gemini (gemini-2.5-flash) modeli sayesinde, gideceğin destinasyon ve ilgi alanlarına göre saatlik detaylı gezi planları oluşturur.
 
 Amacımız seyahat planlamasını herkes için kolay, hızlı ve kişisel hale getirmektir. Ücretli rehber kitapları ya da saatler süren araştırma yerine, saniyeler içinde hazır ve uygulanabilir bir plan.
 
@@ -791,7 +791,7 @@ export function Footer() {
         </div>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-6 gap-3">
           <span className="text-xs text-white/30">© 2026 Gezish AI. Tüm hakları saklıdır.</span>
-          <span className="text-xs text-white/30">Google Gemini · gemini-2.5-flash-preview-04-17 ile güçlendirilmiştir</span>
+          <span className="text-xs text-white/30">Google Gemini · gemini-2.5-flash ile güçlendirilmiştir</span>
         </div>
       </footer>
     </>
