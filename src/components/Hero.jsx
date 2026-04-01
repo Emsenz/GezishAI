@@ -146,22 +146,21 @@ RULES:
 16. Write ALL text values in ${outputLang}`
 
     const callGroq = async () => {
-      const apiKey = import.meta.env.VITE_GROQ_API_KEY
-      if (!apiKey || apiKey === 'undefined') throw new Error('API anahtarı bulunamadı. Vercel → Settings → Environment Variables bölümünde VITE_GROQ_API_KEY eklendiğinden emin ol.')
-      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY
+      if (!apiKey || apiKey === 'undefined') throw new Error('API anahtarı bulunamadı. Vercel → Settings → Environment Variables bölümünde VITE_GEMINI_API_KEY eklendiğinden emin ol.')
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-        body: JSON.stringify({ model: 'llama-3.3-70b-versatile', messages: [{ role: 'user', content: prompt }], temperature: 0.7, max_tokens: 11000 })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.7, maxOutputTokens: 8192 } })
       })
       if (!res.ok) {
         let detail = ''
         try { const errBody = await res.json(); detail = errBody?.error?.message || '' } catch {}
-        if (res.status === 401) throw new Error('API anahtarı geçersiz (401). Groq Console\'dan yeni bir key al ve Vercel\'de güncelle.')
-        if (res.status === 429) throw new Error('API istek limiti doldu (429). Birkaç saniye bekleyip tekrar dene.')
         throw new Error(`API hatası: ${res.status}${detail ? ' — ' + detail : ''}`)
       }
       const data = await res.json()
-      const text = data.choices[0].message.content.trim()
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
+      if (!text) throw new Error('Geçersiz yanıt formatı')
       const raw = text.match(/\{[\s\S]*/)?.[0]
       if (!raw) throw new Error('Geçersiz yanıt formatı')
       const parsed = parseOrRepair(raw)

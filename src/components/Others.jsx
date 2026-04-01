@@ -532,18 +532,17 @@ export function Tools() {
     setVisaAiLoading(true)
     setVisaAiResult(null)
     try {
-      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}` },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile',
-          messages: [{ role: 'user', content: `Türk pasaportu ile ${visaSearch} ülkesine giriş için vize durumu nedir? Kısa ve net Türkçe cevap ver. Şu bilgileri ver: vize gerekli mi, e-vize mümkün mü, vizesiz giriş mümkünse kaç gün kalınabilir, tahmini vize ücreti (varsa). 3-4 cümle yeterli.` }],
-          temperature: 0.3,
-          max_tokens: 300,
+          contents: [{ parts: [{ text: `Türk pasaportu ile ${visaSearch} ülkesine giriş için vize durumu nedir? Kısa ve net Türkçe cevap ver. Şu bilgileri ver: vize gerekli mi, e-vize mümkün mü, vizesiz giriş mümkünse kaç gün kalınabilir, tahmini vize ücreti (varsa). 3-4 cümle yeterli.` }] }],
+          generationConfig: { temperature: 0.3, maxOutputTokens: 300 }
         }),
       })
       const data = await res.json()
-      setVisaAiResult(data.choices?.[0]?.message?.content?.trim() || 'Bilgi alınamadı.')
+      setVisaAiResult(data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Bilgi alınamadı.')
     } catch {
       setVisaAiResult('Sorgu sırasında hata oluştu, lütfen tekrar dene.')
     } finally {
